@@ -17,7 +17,7 @@ def create_project_dict():
   projects = {}
   # Iterate through the projects
   for project in kickstarter.select("li.project.grid_4"):
-    title = project.select("h2.bbcard_name strong a")[].text
+    title = project.select("h2.bbcard_name strong a")[0].text
     projects[title] = {
       'image_link': project.select("div.project-thumbnail a img").attribute("src").value,
       'description': project.select("p.bbcard_blurb")[0].text,
